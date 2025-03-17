@@ -16,14 +16,13 @@ def ge(ttf):
     return t if t else None
 
 
-def get_c(ttf):
+def get_coordinates(ttf):
     t = ge(ttf)
     if not t:
         return None, None
     t_c = t['Point']['pos']
     toponym_longiture, toponym_lattitude = t_c.split(' ')
-    toponym_longiture = float(toponym_longiture)
-    toponym_lattitude = float(toponym_lattitude)
+    toponym_longiture, toponym_lattitude = float(toponym_longiture), float(toponym_lattitude)
 
 
 def get_ll_span(ttf):
